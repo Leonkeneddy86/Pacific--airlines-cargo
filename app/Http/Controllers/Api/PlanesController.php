@@ -7,7 +7,7 @@ use App\Models\Flight;
 use App\Models\Planes;
 use Illuminate\Http\Request;
 
-class AirplaneController extends Controller
+class PlanesController extends Controller
 {
     public function index()
     {
