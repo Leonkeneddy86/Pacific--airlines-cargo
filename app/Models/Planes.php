@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class Planes extends Model
 {
     protected $fillable = [
@@ -11,4 +13,9 @@ class Planes extends Model
         'name',
         'places'
     ];
+
+    public function flights(): HasMany
+    {
+        return $this->hasMany(Flight::class);
+    }
 }
