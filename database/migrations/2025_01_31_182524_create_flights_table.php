@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("arrival");
             $table->string("image");
             $table->foreignId("airplane_id")->constrained("planes");
-            $table->boolean("status");
+            $table->boolean("available");
             $table->timestamps();
         });
     }

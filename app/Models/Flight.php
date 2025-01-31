@@ -13,6 +13,6 @@ class Flight extends Model
             "arrival",
             "image",
             "airplane_id",
-            "status"
+            "available"
     ];
 }
