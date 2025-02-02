@@ -1,29 +1,19 @@
 <?php
 
 namespace Database\Seeders;
-
-use App\Models\Flight;
 use App\Models\Planes;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use App\Models\Flight;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends \Illuminate\Database\Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Crea algunos aviones
+        $planes = Planes::factory()->count(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Luego crea algunos vuelos, asegurándote de usar IDs de aviones existentes
+        Flight::factory()->count(10)->create([
+            'airplane_id' => $planes->random()->id, // Usa un ID aleatorio de los aviones creados
         ]);
     }
 }
-
-Flight::factory(10)->create();
-Planes::factory(10)->create();
-

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Planes extends Model
 {
+    use HasFactory;
     protected $fillable = [
 
         'name',

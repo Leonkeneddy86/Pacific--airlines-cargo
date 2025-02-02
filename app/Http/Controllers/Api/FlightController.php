@@ -27,7 +27,7 @@ class FlightController extends Controller
                 "arrival" => $request->arrival,
                 "image" => $request->image,
                 "airplane_id" => $request->airplaneId,
-                "available" => $request->status
+                "available" => $request->available
             ]
         );
 
@@ -44,7 +44,7 @@ class FlightController extends Controller
                 "arrival" => $request->arrival,
                 "image" => $request->image,
                 "airplane_id" => $request->airplaneId,
-                "status" => $request->status
+                "available" => $request->available,
             ]
         );
 

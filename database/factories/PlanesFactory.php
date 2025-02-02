@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-use App\Models\Planes;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

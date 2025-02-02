@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Flight extends Model
 {
+    use HasFactory;
     protected $filable = [
         
             "date",

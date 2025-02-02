@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Flight;
+
 use App\Models\Planes;
 use Illuminate\Http\Request;
 
