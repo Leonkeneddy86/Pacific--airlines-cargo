@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\FlightController;
 use App\Http\Controllers\Api\PlanesController;
 use App\Http\Controllers\Api\UserController;
-use App\Models\Planes;
-use App\Models\User;
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -20,7 +19,7 @@ Route::put("/plane/{id}", [PlanesController::class, "update"])->name("planesupda
 Route::delete("/plane/{id}", [PlanesController::class, "destroy"])->name("planesdestroy");
 
 Route::get("/flights", [FlightController::class, "index"])->name("Flightsindex");
-Route::get("/flight/{id}", [FlightController::class, "show"])->name("Flighshow");
+Route::get("/flight/{id}", [FlightController::class, "show"])->name("Flightshow");
 Route::post("/flight", [FlightController::class, "store"])->name("Flightstore");
 Route::put("/flight/{id}", [FlightController::class, "update"])->name("Flightupdate");
 Route::delete("/flight/{id}", [FlightController::class, "destroy"])->name("Flightdestroy");

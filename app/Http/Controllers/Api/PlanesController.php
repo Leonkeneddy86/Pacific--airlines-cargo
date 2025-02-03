@@ -20,29 +20,34 @@ class PlanesController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $plane = Planes::create(
-            [
-                "name" => $request->name,
-                "places" => $request->places
-            ]
-        );
-        
-        return (response()->json($plane, 200));
-    }
+{
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'places' => 'required|integer|min:1',
+    ]);
+
+    $plane = Planes::create($validatedData);
+    
+    return response()->json($plane, 200 ); 
+}
 
     public function update(Request $request, string $id)
-    {
-        $plane = Planes::find($id);
-        $plane->update(
-            [
-                "name" => $request->name,
-                "places" => $request->places
-            ]
-        );
+{
+    
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'places' => 'required|integer|min:1',
+    ]);
 
-        return (response()->json($plane, 200));
-    }
+    
+    $plane = Planes::findOrFail($id);
+
+    
+    $plane->update($validatedData);
+
+    
+    return response()->json($plane, 200);
+}
 
     public function destroy(string $id)
     {
