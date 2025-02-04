@@ -14,5 +14,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get("/planes",  [FlightController::class, "index"])->name("planesindex");
 
-Route::get("/planeshow/{id}", [FlightController::class, "show"])->name("planeshow");
+Route::get("/show/{id}", [FlightController::class, "show"])->name("planeshow");
 
