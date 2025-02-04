@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\FlightController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,3 +11,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get("/planes",  [FlightController::class, "index"])->name("planesindex");
+
+Route::get("/planeshow/{id}", [FlightController::class, "show"])->name("planeshow");
+
+Route::get("/flights", [FlightController::class, "flights"])->name("flightsindex"); // Corrected line
