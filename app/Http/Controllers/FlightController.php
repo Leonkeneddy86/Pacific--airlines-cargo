@@ -20,8 +20,6 @@ class FlightController extends Controller
     {
         $plane = Flight::find($id);
 
-        if ($plane)
         return view ('planeshow', compact('plane'));
     }
-
 }
