@@ -20,7 +20,7 @@ class Flight extends Model
         "available"
     ];
 
-    public function airplane(): BelongsTo
+    public function planes(): BelongsTo
     {
         return $this->belongsTo(planes::class);
     }
