@@ -11,16 +11,15 @@ class FlightController extends Controller
     public function index(Request $request)
     {
         
-        $plane = Flight::all();
-        return view('planes', compact('plane'));
+        $flight = Flight::all();
+        return view('Flights', compact('flight'));
 
     }
     
     public function show(string $id)
     {
-        $plane = Flight::find($id);
+        $flight = Flight::find($id);
 
-        return view ('show', compact('plane'));
+        return view ('show', compact('flight'));
     }
-
 }

@@ -15,12 +15,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('profile', function () {})->middleware('checkAge');
 
-Route::get('/home', [HomeController::class, 'index'])
-    ->middleware('admin')
-    ->name('home');
-    Route::get('profile', function () {
-    })->middleware('checkAge');
+Route::get("/flight",  [FlightController::class, "index"])->name("index");
+Route::get('/flights/{id}', [FlightController::class, "show"])->name('show');
 
-Route::get("/index",  [FlightController::class, "index"])->name("index");
 

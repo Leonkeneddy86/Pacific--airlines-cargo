@@ -3,25 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviones</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Avioness</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1 class="mt-5">Lista de aviones</h1>
-        <p>A continuación se muestra una lista de planes disponibles:</p>
-        <ul class="list-group">
-            <li class="list-group-item">Destiny 1: Vuelo a España</li>
-            <li class="list-group-item">Destiny 2: Vuelo a Ecuador</li>
-            <li class="list-group-item">Destiny 3: Vuelo a Cuba</li>
-            <li class="list-group-item">Destiny 4: Vuelo a Argentina</li>
-            <li class="list-group-item">Destiny 5: Vuelo a Colombia</li>
-            <li class="list-group-item">Destiny 6: Vuelo a Miami</li>
-            <li class="list-group-item">Destiny 7: Vuelo a San Francisco</li>
-            <li class="list-group-item">Destiny 8: Vuelo a Africa</li>
-            <li class="list-group-item">Destiny 9: Vuelo a Nueva York</li>
-            <li class="list-group-item">Destiny 10: Vuelo a Londres</li>
-        </ul>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-5">
+        <h1 class="text-3xl font-bold mb-4">Lista de los aviones</h1>
+        <p class="mb-4">A continuación se muestra una lista de los aviones disponibles:</p>
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                    <th class="py-3 px-6 text-left">Nombre del Plan</th>
+                    <th class="py-3 px-6 text-left">Descripción</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-600 text-sm font-light">
+                <tr class="border-b border-gray-300 hover:bg-gray-100">
+                    <td class="py-3 px-6">Plan A</td>
+                    <td class="py-3 px-6">Descripción del Plan A</td>
+                </tr>
+                <tr class="border-b border-gray-300 hover:bg-gray-100">
+                    <td class="py-3 px-6">Plan B</td>
+                    <td class="py-3 px-6">Descripción del Plan B</td>
+                </tr>
+                <tr class="border-b border-gray-300 hover:bg-gray-100">
+                    <td class="py-3 px-6">Plan C</td>
+                    <td class="py-3 px-6">Descripción del Plan C</td>
+                </tr>
+                <tr class="border-b border-gray-300 hover:bg-gray-100">
+                    <td class="py-3 px-6">Plan D</td>
+                    <td class="py-3 px-6">Descripción del Plan D</td>
+                </tr>
+                <tr class="border-b border-gray-300 hover:bg-gray-100">
+                    <td class="py-3 px-6">Plan E</td>
+                    <td class="py-3 px-6">Descripción del Plan E</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <script>
+        fetch('http://localhost:3000/api/planes') // Cambia la URL según tu configuración local
+            .then(response => response.json())
+            .then(data => {
+                // Aquí puedes manejar los datos de la API y actualizar la tabla
+                const tbody = document.querySelector('tbody');
+                tbody.innerHTML = ''; // Limpiar el contenido existente
+
+                data.forEach(plan => {
+                    const row = document.createElement('tr');
+                    row.className = 'border-b border-gray-300 hover:bg-gray-100';
+                    row.innerHTML = `
+                        <td class="py-3 px-6">${plan.nombre}</td>
+                        <td class="py-3 px-6">${plan.descripcion}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error al obtener los aviones:', error));
+    </script>
 </body>
 </html>
