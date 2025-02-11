@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Ruta que utiliza el middleware 'Admin'
+
 Route::get('/home', [HomeController::class, 'index'])
     ->middleware('admin')
     ->name('home');
