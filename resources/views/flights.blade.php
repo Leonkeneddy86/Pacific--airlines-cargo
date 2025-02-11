@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
-                @foreach($flights as $flight)
+                @foreach($flight as $flight)
                 <tr class="border-b border-gray-300 hover:bg-gray-100">
                     <td class="py-3 px-6">{{ $flight->destination }}</td>
                     <td class="py-3 px-6">{{ $flight->flight_number }}</td>
