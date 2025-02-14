@@ -1,4 +1,4 @@
-@extends("layouts.app")
+@extends('layouts.app')
 
 @section('content')
 <!DOCTYPE html>
@@ -14,15 +14,11 @@
     <div class="container mx-auto p-5">
         <h1 class="text-3xl font-bold mb-4">Lista de los vuelos</h1>
         
-        
-        <a href="show" class="inline-block mb-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
-            Show
-        </a>
 
         <table class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">Fecha</th>
+                    <th class="py-3 px-6 text-left">Fecha</th> 
                     <th class="py-3 px-6 text-left">Aeropuerto</th>
                     <th class="py-3 px-6 text-left">Destino</th>
                     <th class="py-3 px-6 text-left">Imagenes</th>
