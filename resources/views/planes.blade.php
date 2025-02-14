@@ -1,17 +1,24 @@
+@extends("layouts.app")
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avioness</title>
+    <title>Aviones</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto p-5">
         <h1 class="text-3xl font-bold mb-4">Lista de los aviones</h1>
-        <p class="mb-4">A continuación se muestra una lista de los aviones disponibles:</p>
+
         <table class="min-w-full bg-white border border-gray-300">
             <thead>
+
+                @foreach (plane as planes )
+                    
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <th class="py-3 px-6 text-left">Nombre del Plan</th>
                     <th class="py-3 px-6 text-left">Descripción</th>
@@ -38,16 +45,17 @@
                     <td class="py-3 px-6">Plan E</td>
                     <td class="py-3 px-6">Descripción del Plan E</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
     <script>
-        fetch('http://localhost:3000/api/planes') // Cambia la URL según tu configuración local
+        fetch('planes') 
             .then(response => response.json())
             .then(data => {
-                // Aquí puedes manejar los datos de la API y actualizar la tabla
+                
                 const tbody = document.querySelector('tbody');
-                tbody.innerHTML = ''; // Limpiar el contenido existente
+                tbody.innerHTML = ''; 
 
                 data.forEach(plan => {
                     const row = document.createElement('tr');
@@ -63,3 +71,5 @@
     </script>
 </body>
 </html>
+
+@endsection
