@@ -15,7 +15,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('profile', function () {})->middleware('checkAge');
 Route::get('profile', function () {})->middleware(Admin::class);
 Route::get("/flights",  [FlightController::class, "index"])->name("index");
 Route::get('/flight/{id}', [FlightController::class, "show"])->name('show');
