@@ -13,9 +13,4 @@ class PlanesController extends Controller
         return view('planes', compact('plane'));
     }
 
-    public function show(Request $request, $id)
-    {
-        $plane = Planes::findOrFail($id);
-        return view('planeShow', compact('plane'));
-    }
 }
