@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Redirect;
 
 class Admin
 {
@@ -15,12 +17,18 @@ class Admin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if (Auth::check() && Auth::user()->is_admin) {
-            return $next($request);
+    public function handle(Request $request, Closure $next, string $role): Response
+    {   
+        $user = Auth::user();
+
+        if ($role === 'Admin' && (!$user || !$user->Admin)) {
+            return redirect('/')->with('error', 'No tienes permiso para acceder a esta página.');
+        }
+        if ($role === 'user' && (!$user || $user->Admin)) {
+            return redirect('/login')->with('error', 'Debes iniciar sesión.');
         }
 
-        return response()->json(['error' => 'No tienes acceso a esta página.'], 404);
+        return $next($request);
+
     }
 }
