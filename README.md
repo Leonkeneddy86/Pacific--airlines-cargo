@@ -72,6 +72,8 @@ PHP, Laravel, Composer, NodeJS, Xampp, Blade, TailwindCSS
 
 ## Diagrama de base de datos
 
+<img width="685" alt="relations" src="https://github.com/user-attachments/assets/c835e145-c074-4e4b-b8fc-84d6ee69225a" />
+
 
 ## API Flights
 
