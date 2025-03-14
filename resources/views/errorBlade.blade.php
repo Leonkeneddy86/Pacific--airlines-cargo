@@ -13,7 +13,7 @@
     <div class="container">
         <div class="error-code">404</div>
         <div class="error-message">¡Vaya! La página que buscas no se encuentra.</div>
-        <a href="{{ url('/login') }}">Volver al inicio</a>
+        <a href="{{ url('/') }}">Volver al inicio</a>
     </div>
 </body>
 </html>
