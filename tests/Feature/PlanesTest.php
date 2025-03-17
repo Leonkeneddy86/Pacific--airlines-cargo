@@ -1,25 +1,36 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
-use PHPUnit\Framework\TestCase;
 use App\Models\Planes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Tests\TestCase;
 
 class PlanesTest extends TestCase
 {
-    public function test_fillable_attributes()
+    /**
+     * Test the fillable attributes.
+     *
+     * @return void
+     */
+    public function testFillableAttributes()
     {
-        $plane = new Planes();
-        $this->assertEquals(['name', 'places'], $plane->getFillable());
+        $expectedFillable = ['name', 'places'];
+        $plane = new Planes;
+
+        $this->assertSame($expectedFillable, $plane->getFillable());
     }
 
-    public function test_plane_creation()
+    /**
+     * Test the flights relationship.
+     *
+     * @return void
+     */
+    public function testFlightsRelationship()
     {
-        $plane = new Planes([
-            'name' => 'Boeing 747',
-            'places' => 416
-        ]);
-        $this->assertEquals('Boeing 747', $plane->name);
-        $this->assertEquals(416, $plane->places);
+        $plane = new Planes;
+        $relation = $plane->flights();
+
+        $this->assertInstanceOf(HasMany::class, $relation);
     }
 }
