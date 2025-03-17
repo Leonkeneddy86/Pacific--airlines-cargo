@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html class="dark scroll-smooth">
 
@@ -528,3 +532,5 @@
 </body>
 
 </html>
+
+@endsection

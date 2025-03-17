@@ -10,9 +10,9 @@ use App\Http\Controllers\PlanesController;
 
 Auth::routes();
 
-
-Route::get('Dashboard', function () {})->middleware(Admin::class, 'auth');
+Route::get('Dashboard', function () {})->middleware(Admin::class, 'auth')->name('dashboard');
 Route::get("/flights",  [FlightController::class, "index"])->name("index");
 Route::get('/planes', [PlanesController::class, 'index'])->name('index');
-Route::get('/planes/create', [PlanesController::class, 'create'])->name('create');
 Route::post('/planes', [PlanesController::class, 'store'])->name('store');
+Route::get('/errorBlade', function () {return view('errorBlade');})->name('errorBlade');
+
