@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\FlightController;
 use App\Http\Controllers\Api\PlanesController;
+use App\Http\Controllers\AuthController;
 
 
 
@@ -23,3 +24,15 @@ Route::get("/flight/{id}", [FlightController::class, "show"])->name("apiishow");
 Route::post("/flight", [FlightController::class, "store"])->name("apiistore");
 Route::put("/flight/{id}", [FlightController::class, "update"])->name("apiiupdate");
 Route::delete("/flight/{id}", [FlightController::class, "destroy"])->name("apiidestroy");
+
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api')->name('logout');
+    Route::post('/refresh', [AuthController::class, 'refresh'])->middleware('auth:api')->name('refresh');
+    Route::post('/me', [AuthController::class, 'me'])->middleware('auth:api')->name('me');
+});

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Flight;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class FlightController extends Controller
 {
@@ -61,7 +62,20 @@ class FlightController extends Controller
 
     public function destroy(string $id)
     {
+
+        $user = Auth::user();
+        /*
         Flight::find($id)->delete();
+        */
+        
+        if($user->admin){
+            $flight = Flight::find($id);
+            $flight->delete();
+
+        }else{
+            return response()->json(['error' => 'Unauthorized to delete a Flight, you are not admin'], 401);
+        }
         return response()->json(null, 204);
     }
+
 }
