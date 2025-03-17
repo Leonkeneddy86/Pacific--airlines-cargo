@@ -24,6 +24,14 @@
                     <tr>
                         <td>{{ $plane->name }}</td>
                         <td>{{ $plane->places }}</td>
+                        <td>
+                            <a href="{{ route('planes.edit', $plane->id) }}" class="btn btn-primary">Editar</a>
+                            <form action="{{ route('planes.destroy', $plane->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
