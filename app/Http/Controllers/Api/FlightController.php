@@ -64,15 +64,20 @@ class FlightController extends Controller
     {
 
         $user = Auth::user();
+        /*
         Flight::find($id)->delete();
+        */
         
-        if($user->Admin){
+        if($user->admin){
             $flight = Flight::find($id);
             $flight->delete();
 
         }else{
-            return response()->json(['error' => 'delete flight'], 401);
+            return response()->json(['error' => 'Unauthorized to delete a Flight, you are not admin'], 401);
         }
         return response()->json(null, 204);
     }
+
+
+
 }
