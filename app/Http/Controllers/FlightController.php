@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Flight;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class FlightController extends Controller
 {
-    public function index() {
+    public function index(Request $request)
+    {
         
-        return view('welcome');
+        $flight = Flight::all();
+        return view('Flights', compact('flight'));
+
     }
+    
 }
