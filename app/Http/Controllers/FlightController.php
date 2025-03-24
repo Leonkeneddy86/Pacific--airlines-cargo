@@ -21,5 +21,9 @@ class FlightController extends Controller
         $flight = Flight::find($id);
         return view('flightsShow', compact('flight'));
     }
-    
+
+    public function create()
+    {
+        return view('flightsCreate');
+    }
 }
