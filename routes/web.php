@@ -8,6 +8,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PlanesController;
 
+
+Route::get('/', function () {
+    return view('index');
+});
+
 Auth::routes();
 
 
@@ -16,4 +21,4 @@ Route::get("/flightsShow/{id}", [FlightController::class, "show"])->name("show")
 Route::get('/planes', [PlanesController::class, 'index'])->middleware("auth", admin::class)->name('planes');
 Route::get('/flightsCreate', [FlightController::class, 'create'])->name('flightsCreate');
 Route::get('/Error', [AdminController::class, 'index'])->name('Error');
-Route::get('index', [UserController::class, 'index'])->name('index');
+Route::get('/index', [UserController::class, 'index'])->name('index');
