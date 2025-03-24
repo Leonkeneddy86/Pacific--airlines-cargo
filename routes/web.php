@@ -12,4 +12,5 @@ Auth::routes();
 Route::get("/flights",  [FlightController::class, "index"])->name("flights");
 Route::get("/flightsShow/{id}", [FlightController::class, "show"])->name("show");
 Route::get('/planes', [PlanesController::class, 'index'])->middleware("auth", admin::class)->name('planes');
-Route::get('flightsCreate', [FlightController::class,'store'])->name('planes.store');
+Route::get('/flightsCreate', [FlightController::class, 'create'])->name('flightsCreate');
+

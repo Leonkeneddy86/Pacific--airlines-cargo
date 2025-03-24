@@ -22,7 +22,7 @@
                     <td class="py-3 px-6">{{ $flight->date }}</td>
                     <td class="py-3 px-6">{{ $flight->departure }}</td>
                     <td class="py-3 px-6">{{ $flight->arrival }}</td>
-                    <td class="py-3 px-6"><img src="{{asset('./Images/ciudad.jpg')}}" alt="Imagen del vuelo" class="w-16 h-16 object-cover"></td>
+                    <td class="py-3 px-6"><img src="{{asset('./Images/avion.jpg')}}" alt="Imagen del avion" class="w-16 h-16 object-cover"></td>
                     <td class="py-3 px-6">{{ $flight->available }}</td>
                     </tr>
                 </tbody>

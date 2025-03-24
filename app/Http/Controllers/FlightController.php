@@ -24,20 +24,8 @@ class FlightController extends Controller
 
     public function create()
     {
-        return view('flightsCreate');
+        // Aquí podrías cargar la vista correspondiente, por ejemplo:
+        return view('flightsCreate'); // Asegúrate de tener la vista en resources/views/flights/create.blade.php
     }
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'date' => 'required|date',
-            'departure' => 'required|string|max:255',
-            'arrival' => 'required|string|max:255',
-            'image' => 'required|url',
-            'airplane_id' => 'required|exists:planes,id',
-            'available' => 'required|boolean',
-        ]);
-
-        $flight = new Flight();
-}
 }
