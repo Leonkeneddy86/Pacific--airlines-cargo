@@ -26,4 +26,18 @@ class FlightController extends Controller
     {
         return view('flightsCreate');
     }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'date' => 'required|date',
+            'departure' => 'required|string|max:255',
+            'arrival' => 'required|string|max:255',
+            'image' => 'required|url',
+            'airplane_id' => 'required|exists:planes,id',
+            'available' => 'required|boolean',
+        ]);
+
+        $flight = new Flight();
+}
 }
