@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <!DOCTYPE html>
@@ -20,17 +20,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($plane as $plane)
+                @foreach($planes as $plane)
                     <tr>
                         <td>{{ $plane->name }}</td>
                         <td>{{ $plane->places }}</td>
                         <td>
-                            <a href="{{ route('planes.edit', $plane->id) }}" class="btn btn-primary">Editar</a>
-                            <form action="{{ route('planes.destroy', $plane->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                            </form>
+                            <a href="{{ route('planes', ["action" => "delete", "id" => $plane->id]) }}" class="btn btn-primary">Eliminar</a>
                         </td>
                     </tr>
                 @endforeach

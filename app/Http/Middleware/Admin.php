@@ -16,10 +16,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->Admin)
+        if (Auth::user()->admin)
        {
         return $next($request);
        }
-       return redirect()->route('errorBlade');
     }
 }

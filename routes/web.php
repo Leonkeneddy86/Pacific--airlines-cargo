@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PlanesController;
-use App\HttpControllers\AuthController;
 
 Auth::routes();
 
-Route::get('/Dashboard', function () {})->middleware(Admin::class, 'auth')->name('dashboard');
-Route::get("/flights",  [FlightController::class, "index"])->name("index");
-Route::get('/planes', [PlanesController::class, 'index'])->name('index');
+
+Route::get("/flights",  [FlightController::class, "index"])->name("flights");
+Route::get("/flightsShow/{id}", [FlightController::class, "show"])->name("show");
+Route::get('/planes', [PlanesController::class, 'index'])->middleware("auth", Admin::class)->name('planes');
 
