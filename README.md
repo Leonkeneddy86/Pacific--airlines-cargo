@@ -14,18 +14,15 @@ Sistema web para la gestión de una aerolínea de carga, con funcionalidades par
 ## 🚀 Instalación
 
 ### Requisitos Previos
-- PHP 8.0+
 - Composer
-- Node.js 14+
-- MySQL 5.7+ o MariaDB
-- Servidor web (Apache/Nginx) o XAMPP
+- Node.js
+- Servidor web: XAMPP
 
 ### Pasos de Instalación
 
 1. Clonar el repositorio:
-```bash
-git clone https://github.com/Leonkeneddy86/Project-Airline.git
-cd Project-Airline
+```
+https://github.com/Leonkeneddy86/Pacific--airlines-cargo.git
 ```
 Instalar dependencias de Composer:
 ```
@@ -84,6 +81,8 @@ Vista de Vuelos
 Vista Show detalles del vuelo
 
 <img width="950" alt="show" src="https://github.com/user-attachments/assets/4b600efb-112c-4333-bb4b-bfa30d62f387" />
+
+Vista de formulario
 
 
 Vista de Pagina de error
