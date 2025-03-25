@@ -14,6 +14,7 @@ Sistema web para la gestión de una aerolínea de carga, con funcionalidades par
 ## 🚀 Instalación
 
 ### Requisitos Previos
+- Laravel 11
 - Composer
 - Node.js
 - Servidor web: XAMPP
