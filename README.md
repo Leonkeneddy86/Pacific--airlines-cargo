@@ -126,6 +126,22 @@ Mi test Coverage:
 
 
 
+## Moockups Figma:
+
+[Ver el diseño en Figma](https://embed.figma.com/design/Itn7Rt7OGH4yYwDAPpCm5H/AIRLINE?node-id=0-1&embed-host=share)
+
+
+## Para la gestion de Tareas he usado Jira
+
+## Mi Tablero: 
+
+![screencapture-jonathan19jtv-1739043810794-atlassian-net-jira-software-projects-SCRUM-boards-1-backlog-2025-03-25-13_55_15](https://github.com/user-attachments/assets/3d6165da-df39-407e-bd94-c998016c0523)
+
+
+## Mi Backlog:
+![screencapture-jonathan19jtv-1739043810794-atlassian-net-jira-software-projects-SCRUM-boards-1-backlog-2025-03-25-13_55_15](https://github.com/user-attachments/assets/ea0de5e1-8326-42b3-b914-b7db72edc23c)
+
+
 ## 🌐 API Endpoints
 
 ### 🔐 Autenticación
