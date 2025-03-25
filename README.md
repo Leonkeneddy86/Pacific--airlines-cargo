@@ -122,9 +122,13 @@ Mi test Coverage:
 
 
 
-🗃️ Diagrama de Base de Datos
+## 🗃️ Diagrama de Base de Datos
 
+[Project Airline - DrawSQL](https://drawsql.app/teams/jonathan-28/diagrams/project-airline)
 
+## Captura de pantalla del Diagrama
+
+<img width="953" alt="Drawsql" src="https://github.com/user-attachments/assets/9401c757-5a1c-49e4-97b7-8611ea2731bd" />
 
 ## Moockups Figma:
 
@@ -184,10 +188,7 @@ Mi test Coverage:
 - Ver sus reservas
 
 ### 👨‍💼 Administrador
-- Todas las funciones de usuario
 - Gestionar vuelos (eliminar)
-- Gestionar aviones
-- Ver todas las reservas
 
 ## 🤝 Contribución
 Las contribuciones son bienvenidas. Por favor:
