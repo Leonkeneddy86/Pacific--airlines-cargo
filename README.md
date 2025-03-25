@@ -190,6 +190,10 @@ Mi test Coverage:
 ### 👨‍💼 Administrador
 - Gestionar vuelos (eliminar)
 
+  ## Licencia
+
+Este proyecto está bajo la **MIT License**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
 ## 🤝 Contribución
 Las contribuciones son bienvenidas. Por favor:
 - Abre un issue para reportar problemas o sugerencias
