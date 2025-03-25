@@ -196,5 +196,10 @@ Las contribuciones son bienvenidas. Por favor:
 - Envía un pull request para contribuir con mejoras
 
 ## ✉️ Contacto
-**Jonathan Torres**  
+**Jonathan Torreblanca**  
 📧 Email: [Jonathan19.jtv@gmail.com](mailto:Jonathan19.jtv@gmail.com)
+
+<a href="https://www.linkedin.com/in/jonathantorreblanca" target="_blank">
+  <img src="https://img.shields.io/badge/linkedin-1de9b6?style=for-the-badge&logo=linkedin&logoColor=blue" alt="Linkedin Badge">
+</a>
+
