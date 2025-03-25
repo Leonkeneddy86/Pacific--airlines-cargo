@@ -16,10 +16,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->Admin)
-       {
-        return $next($request);
-       }
-       return redirect()->route('errorBlade');
+        if (Auth::user()->admin)
+        {
+            return $next($request);
+        }
+        return redirect()->route('Error');
     }
 }

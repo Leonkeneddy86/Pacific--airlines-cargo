@@ -9,8 +9,20 @@ class PlanesController extends Controller
 {
     public function index(Request $request)
     {
-        $plane = Planes::all();
-        return view('planes', compact('plane'));
+        $planes = Planes::all();
+        if ($request->action == 'delete') {
+            $this->destroy($request->id);
+            return redirect()->route('planes');
+        }
+        return view('planes', compact('planes'));
+    }
+
+
+    public function destroy($id)
+    {
+        $plane = Planes::find($id);
+        $plane->delete();
+       
     }
 
 }

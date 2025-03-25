@@ -12,8 +12,20 @@ class FlightController extends Controller
     {
         
         $flight = Flight::all();
-        return view('Flights', compact('flight'));
-
+        
+        return view('flights', compact('flight'));
     }
-    
+
+    public function show($id)
+    {
+        $flight = Flight::find($id);
+        return view('flightsShow', compact('flight'));
+    }
+
+    public function create()
+    {
+        // Aquí podrías cargar la vista correspondiente, por ejemplo:
+        return view('flightsCreate'); // Asegúrate de tener la vista en resources/views/flights/create.blade.php
+    }
+
 }
