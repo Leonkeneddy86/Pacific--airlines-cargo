@@ -139,7 +139,7 @@ Mi test Coverage:
 
 ## Mi Tablero: 
 
-![screencapture-jonathan19jtv-1739043810794-atlassian-net-jira-software-projects-SCRUM-boards-1-backlog-2025-03-25-13_55_15](https://github.com/user-attachments/assets/3d6165da-df39-407e-bd94-c998016c0523)
+![screencapture-jonathan19jtv-1739043810794-atlassian-net-jira-software-projects-SCRUM-boards-1-2025-03-26-08_22_04](https://github.com/user-attachments/assets/4f4bbf62-d8a4-40f8-9d80-aa51f98a07d1)
 
 
 ## Mi Backlog:
