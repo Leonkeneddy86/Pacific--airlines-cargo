@@ -163,7 +163,6 @@ Mi test Coverage:
 | Método | Endpoint                | Descripción                          | Permisos       |
 |--------|-------------------------|--------------------------------------|----------------|
 | GET    | `/api/flights`          | Listar todos los vuelos              | Público        |
-| GET    | `/api/flights/active`   | Listar vuelos activos                | Público        |
 | GET    | `/api/flight/{id}`      | Obtener detalles de un vuelo         | Público        |
 | POST   | `/api/flight`           | Crear nuevo vuelo                    | Admin          |
 | PUT    | `/api/flight/{id}`      | Actualizar vuelo                     | Admin          |
