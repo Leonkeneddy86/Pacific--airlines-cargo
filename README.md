@@ -83,8 +83,6 @@ Vista Show detalles del vuelo
 
 <img width="950" alt="show" src="https://github.com/user-attachments/assets/4b600efb-112c-4333-bb4b-bfa30d62f387" />
 
-Vista de formulario
-
 
 Vista de Pagina de error
 
@@ -120,6 +118,7 @@ php artisan test --coverage
 
 Mi test Coverage:
 
+<img width="698" alt="porcentaje de los test" src="https://github.com/user-attachments/assets/ff357361-3344-48c5-9a41-ea380a822988" />
 
 
 ## 🗃️ Diagrama de Base de Datos
@@ -139,11 +138,11 @@ Mi test Coverage:
 
 ## Mi Tablero: 
 
-![screencapture-jonathan19jtv-1739043810794-atlassian-net-jira-software-projects-SCRUM-boards-1-2025-03-26-08_22_04](https://github.com/user-attachments/assets/4f4bbf62-d8a4-40f8-9d80-aa51f98a07d1)
-
+![Jira tablero](https://github.com/user-attachments/assets/b5499010-6f7e-41b5-9ecc-88c9e7a19b8e)
 
 ## Mi Backlog:
-![screencapture-jonathan19jtv-1739043810794-atlassian-net-jira-software-projects-SCRUM-boards-1-backlog-2025-03-25-13_55_15](https://github.com/user-attachments/assets/ea0de5e1-8326-42b3-b914-b7db72edc23c)
+
+![Jira backlog](https://github.com/user-attachments/assets/dc95f604-1fd0-4f19-af4c-0efbc7884114)
 
 
 ## 🌐 API Endpoints
@@ -160,23 +159,23 @@ Mi test Coverage:
 
 ### ✈️ Vuelos (Flights)
 
-| Método | Endpoint                | Descripción                          | Permisos       |
-|--------|-------------------------|--------------------------------------|----------------|
-| GET    | `/api/flights`          | Listar todos los vuelos              | Público        |
-| GET    | `/api/flight/{id}`      | Obtener detalles de un vuelo         | Público        |
-| POST   | `/api/flight`           | Crear nuevo vuelo                    | Admin          |
-| PUT    | `/api/flight/{id}`      | Actualizar vuelo                     | Admin          |
-| DELETE | `/api/flight/{id}`      | Eliminar vuelo                       | Admin          |
+| Método | Endpoint                | Descripción                          
+|--------|-------------------------|--------------------------------------
+| GET    | `/api/flights`          | Listar todos los vuelos              
+| GET    | `/api/flight/{id}`      | Obtener detalles de un vuelo         
+| POST   | `/api/flight`           | Crear nuevo vuelo                    
+| PUT    | `/api/flight/{id}`      | Actualizar vuelo                     
+| DELETE | `/api/flight/{id}`      | Eliminar vuelo                       
 
 ### 🛩️ Aviones (Planes)
 
-| Método | Endpoint                | Descripción                          | Permisos       |
-|--------|-------------------------|--------------------------------------|----------------|
-| GET    | `/api/planes`           | Listar todos los aviones             | Público        |
-| GET    | `/api/plane/{id}`       | Obtener detalles de un avión         | Público        |
-| POST   | `/api/plane`            | Añadir nuevo avión                   | Admin          |
-| PUT    | `/api/plane/{id}`       | Actualizar avión                     | Admin          |
-| DELETE | `/api/plane/{id}`       | Eliminar avión                       | Admin          |
+| Método | Endpoint                | Descripción                          
+|--------|-------------------------|--------------------------------------
+| GET    | `/api/planes`           | Listar todos los aviones             
+| GET    | `/api/plane/{id}`       | Obtener detalles de un avión         
+| POST   | `/api/plane`            | Añadir nuevo avión                   
+| PUT    | `/api/plane/{id}`       | Actualizar avión                     
+| DELETE | `/api/plane/{id}`       | Eliminar avión                       
 
 
 ## 👥 Roles y Permisos
@@ -206,3 +205,10 @@ Las contribuciones son bienvenidas. Por favor:
   <img src="https://img.shields.io/badge/linkedin-1de9b6?style=for-the-badge&logo=linkedin&logoColor=blue" alt="Linkedin Badge">
 </a>
 
+## ⚠️ Notas de Atención
+
+Nota:
+Las vistas actuales son prototipos y podrían cambiar en futuras actualizaciones.
+
+Nota:
+Este proyecto está en constante actualización. Conforme se implementen mejoras, se reflejarán en este documento.
