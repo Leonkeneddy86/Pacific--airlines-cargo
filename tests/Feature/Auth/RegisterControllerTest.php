@@ -34,7 +34,7 @@ class RegisterControllerTest extends TestCase
      */
     public function test_registration_succeeds_with_valid_data()
     {
-        // Define a temporary route for testing registration
+        
         Route::post('/register', function (\Illuminate\Http\Request $request) {
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
@@ -58,18 +58,18 @@ class RegisterControllerTest extends TestCase
 
         $response = $this->post('/register', $validData);
 
-        // Assert the user is created in the database
+        
         $this->assertDatabaseHas('users', [
             'email' => 'test@example.com',
             'name'  => 'Test User',
         ]);
 
-        // Get the created user
+      
         $user = User::where('email', 'test@example.com')->first();
         $this->assertNotNull($user);
         $this->assertTrue(Hash::check('secretpassword', $user->password));
 
-        // Assert redirection to the intended route
+        
         $response->assertRedirect('/flights');
     }
 }

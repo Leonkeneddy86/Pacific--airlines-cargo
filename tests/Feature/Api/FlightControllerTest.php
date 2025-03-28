@@ -31,11 +31,11 @@ class FlightControllerTest extends TestCase
 
     public function test_store_creates_flight()
 {
-    // Arrange: Crear un usuario autenticado y un avión
-    $user = User::factory()->create(); // Crear el usuario
-    $plane = Planes::factory()->create(); // Crear el avión
+    
+    $user = User::factory()->create(); 
+    $plane = Planes::factory()->create(); 
 
-    // Datos del vuelo a crear
+   
     $data = [
         'date' => now()->addDays(10)->toDateString(),
         'departure' => 'Madrid',
@@ -45,16 +45,16 @@ class FlightControllerTest extends TestCase
         'available' => true,
     ];
 
-    // Act: Autenticar al usuario y realizar la solicitud POST
+    
     $this->actingAs($user, 'sanctum')
-        ->postJson('/api/flight', $data) // Cambié la ruta a '/api/flights' para que coincida con las convenciones RESTful
+        ->postJson('/api/flight', $data) 
         ->assertStatus(200)
         ->assertJsonFragment([
             'departure' => 'Madrid',
             'arrival' => 'Barcelona',
         ]);
 
-    // Assert: Verificar que los datos se hayan guardado en la base de datos
+    
     $this->assertDatabaseHas('flights', [
         'date' => now()->addDays(10)->toDateString(),
         'departure' => 'Madrid',
@@ -67,10 +67,10 @@ class FlightControllerTest extends TestCase
 
 public function test_store_fails_with_invalid_data()
 {
-    // Arrange: Crear un usuario autenticado
+   
     $user = User::factory()->create();
 
-    // Datos inválidos del vuelo
+    
     $data = [
         'date' => 'invalid-date',
         'departure' => '',
@@ -80,19 +80,19 @@ public function test_store_fails_with_invalid_data()
         'available' => null,
     ];
 
-    // Act: Autenticar al usuario y realizar la solicitud POST
+    
     $this->actingAs($user, 'sanctum')
         ->postJson('/api/flight', $data)
-        ->assertStatus(422) // Verificar que la validación falle
+        ->assertStatus(422) 
         ->assertJsonValidationErrors(['date', 'departure', 'arrival', 'image', 'airplane_id', 'available']);
 }
 public function test_update_flight_successfully()
 {
-    // Arrange: Crear un usuario autenticado, un avión y un vuelo
-    $user = User::factory()->create(); // Crear el usuario
-    $plane = Planes::factory()->create(); // Crear el avión
+    
+    $user = User::factory()->create(); 
+    $plane = Planes::factory()->create(); 
     $flight = Flight::factory()->create([
-        'airplane_id' => $plane->id, // Asociar el vuelo al avión creado
+        'airplane_id' => $plane->id, 
         'date' => now()->addDays(5)->toDateString(),
         'departure' => 'Madrid',
         'arrival' => 'Barcelona',
@@ -100,7 +100,7 @@ public function test_update_flight_successfully()
         'available' => true,
     ]);
 
-    // Datos actualizados del vuelo
+    
     $updatedData = [
         'date' => now()->addDays(10)->toDateString(),
         'departure' => 'Valencia',
@@ -110,7 +110,7 @@ public function test_update_flight_successfully()
         'available' => false,
     ];
 
-    // Act: Autenticar al usuario y realizar la solicitud PUT
+    
     $this->actingAs($user, 'sanctum')
         ->putJson(route('apiiupdate', ['id' => $flight->id]), $updatedData) // Usar el nombre de la ruta
         ->assertStatus(200)
@@ -119,7 +119,7 @@ public function test_update_flight_successfully()
             'arrival' => 'Lisbon',
         ]);
 
-    // Assert: Verificar que los datos se hayan actualizado en la base de datos
+  
     $this->assertDatabaseHas('flights', [
         'id' => $flight->id,
         'date' => now()->addDays(10)->toDateString(),
@@ -132,34 +132,34 @@ public function test_update_flight_successfully()
 }
 public function test_destroy_deletes_flight_for_admin_user()
 {
-    // Arrange: Crear un usuario administrador, un avión y un vuelo
-    $admin = User::factory()->create(['admin' => true]); // Usuario administrador
-    $plane = Planes::factory()->create(); // Crear el avión
-    $flight = Flight::factory()->create(['airplane_id' => $plane->id]); // Crear el vuelo
+    
+    $admin = User::factory()->create(['admin' => true]); 
+    $plane = Planes::factory()->create(); 
+    $flight = Flight::factory()->create(['airplane_id' => $plane->id]); 
 
-    // Act: Autenticar al usuario administrador y realizar la solicitud DELETE
+    
     $this->actingAs($admin, 'sanctum')
         ->deleteJson(route('apiidestroy', ['id' => $flight->id]))
-        ->assertStatus(204); // Verificar que la respuesta sea 204 (No Content)
+        ->assertStatus(204); 
 
-    // Assert: Verificar que el vuelo haya sido eliminado de la base de datos
+   
     $this->assertDatabaseMissing('flights', ['id' => $flight->id]);
 }
 
 public function test_destroy_fails_for_non_admin_user()
 {
-    // Arrange: Crear un usuario no administrador, un avión y un vuelo
-    $user = User::factory()->create(['admin' => false]); // Usuario no administrador
-    $plane = Planes::factory()->create(); // Crear el avión
-    $flight = Flight::factory()->create(['airplane_id' => $plane->id]); // Crear el vuelo
+    
+    $user = User::factory()->create(['admin' => false]); 
+    $plane = Planes::factory()->create(); 
+    $flight = Flight::factory()->create(['airplane_id' => $plane->id]); 
 
-    // Act: Autenticar al usuario no administrador y realizar la solicitud DELETE
+    
     $this->actingAs($user, 'sanctum')
         ->deleteJson(route('apiidestroy', ['id' => $flight->id]))
-        ->assertStatus(401) // Verificar que la respuesta sea 401 (Unauthorized)
+        ->assertStatus(401) 
         ->assertJsonFragment(['error' => 'Unauthorized to delete a Flight, you are not admin']);
 
-    // Assert: Verificar que el vuelo no haya sido eliminado de la base de datos
+    
     $this->assertDatabaseHas('flights', ['id' => $flight->id]);
 }
 }
