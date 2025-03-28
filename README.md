@@ -1,67 +1,214 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛩️ Pacific Airline Cargo - Sistema de Administración de Aerolínea
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema web para la gestión de una aerolínea de carga, con funcionalidades para usuarios y administradores, incluyendo autenticación con JSON Web Tokens (JWT).
 
-## About Laravel
+## ✨ Características Principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Reserva de vuelos** para usuarios registrados
+- **Gestión completa de vuelos y aviones** para administradores
+- **Sistema de autenticación seguro** con JWT
+- **Interfaz responsive** diseñada con TailwindCSS
+- **API RESTful** para integración con otros sistemas
+- **Sistema de roles** (Usuario/Administrador)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Instalación
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Requisitos Previos
+- Laravel 11
+- Composer
+- Node.js
+- Servidor web: XAMPP
 
-## Learning Laravel
+### Pasos de Instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clonar el repositorio:
+```
+https://github.com/Leonkeneddy86/Pacific--airlines-cargo.git
+```
+Instalar dependencias de Composer:
+```
+composer install
+```
+Instalar dependencias de Node.js:
+```
+npm install
+```
+Renombrar Variable de entorno (ENV)
+```
+.env.example .env
+```
+Configurar base de datos en .env:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=airline2
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Generar clave de aplicación:
+```
+php artisan key:generate
+```
+Ejecutar migraciones:
+```
+php artisan migrate:fresh
+```
+Ejecutar Seeders:
+```
+php artisan migrate:fresh --seed
+```
+Iniciar servidor de desarrollo:
+```
+php artisan serve
+npm run dev
+```
+📸 Capturas de Pantalla
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Página Principal
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<img width="944" alt="index" src="https://github.com/user-attachments/assets/6d3d0ef2-5ff9-4dc2-80d9-d897da82c521" />
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Vista de Aviones
 
-### Premium Partners
+<img width="950" alt="aviones" src="https://github.com/user-attachments/assets/f8d8221c-1c39-48a5-8a5d-1fcfa0af0126" />
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+Vista de Vuelos
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<img width="949" alt="flights" src="https://github.com/user-attachments/assets/13fe49b5-6993-46c3-b501-2df0b03ab4fa" />
 
-## Code of Conduct
+Vista Show detalles del vuelo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<img width="950" alt="show" src="https://github.com/user-attachments/assets/4b600efb-112c-4333-bb4b-bfa30d62f387" />
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Vista de Pagina de error
 
-## License
+<img width="950" alt="Error" src="https://github.com/user-attachments/assets/d9cb3ef1-3cb6-4bbf-8e48-906180441d51" />
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Project-Airline
+
+🛠️ Tecnologías Utilizadas
+Backend: Laravel 11
+
+Frontend: Blade, TailwindCSS
+
+Base de Datos: MySQL
+
+Autenticación: JWT (JSON Web Tokens)
+
+Herramientas: Composer, Node.js, XAMPP
+
+🧪 Testing
+Ejecutar tests con:
+```
+php artisan test
+```
+
+Para Ver los test de forma mas grafica en un HTML pon este comando:
+```
+php artisan test --coverage-html=coverage-report
+```
+
+Ejecutar un Test Coverage Basico en terminal
+```
+php artisan test --coverage
+```
+
+Mi test Coverage:
+
+<img width="698" alt="porcentaje de los test" src="https://github.com/user-attachments/assets/ff357361-3344-48c5-9a41-ea380a822988" />
+
+
+## 🗃️ Diagrama de Base de Datos
+
+[Project Airline - DrawSQL](https://drawsql.app/teams/jonathan-28/diagrams/project-airline)
+
+## Captura de pantalla del Diagrama
+
+<img width="953" alt="Drawsql" src="https://github.com/user-attachments/assets/9401c757-5a1c-49e4-97b7-8611ea2731bd" />
+
+## Moockups Figma:
+
+[Ver el diseño en Figma](https://embed.figma.com/design/Itn7Rt7OGH4yYwDAPpCm5H/AIRLINE?node-id=0-1&embed-host=share)
+
+
+## Para la gestion de Tareas he usado Jira
+
+## Mi Tablero: 
+
+![Jira tablero](https://github.com/user-attachments/assets/b5499010-6f7e-41b5-9ecc-88c9e7a19b8e)
+
+## Mi Backlog:
+
+![Jira backlog](https://github.com/user-attachments/assets/dc95f604-1fd0-4f19-af4c-0efbc7884114)
+
+
+## 🌐 API Endpoints
+
+### 🔐 Autenticación
+
+| Método | Endpoint          | Descripción                              | Middleware     |
+|--------|-------------------|------------------------------------------|----------------|
+| POST   | `/auth/register`  | Registrar nuevo usuario                  | api            |
+| POST   | `/auth/login`     | Iniciar sesión (obtener JWT token)       | api            |
+| POST   | `/auth/logout`    | Cerrar sesión (invalidar token)          | api, auth:api  |
+| POST   | `/auth/refresh`   | Refrescar token JWT                      | api, auth:api  |
+| POST   | `/auth/me`        | Obtener información del usuario actual   | api, auth:api  |
+
+### ✈️ Vuelos (Flights)
+
+| Método | Endpoint                | Descripción                          
+|--------|-------------------------|--------------------------------------
+| GET    | `/api/flights`          | Listar todos los vuelos              
+| GET    | `/api/flight/{id}`      | Obtener detalles de un vuelo         
+| POST   | `/api/flight`           | Crear nuevo vuelo                    
+| PUT    | `/api/flight/{id}`      | Actualizar vuelo                     
+| DELETE | `/api/flight/{id}`      | Eliminar vuelo                       
+
+### 🛩️ Aviones (Planes)
+
+| Método | Endpoint                | Descripción                          
+|--------|-------------------------|--------------------------------------
+| GET    | `/api/planes`           | Listar todos los aviones             
+| GET    | `/api/plane/{id}`       | Obtener detalles de un avión         
+| POST   | `/api/plane`            | Añadir nuevo avión                   
+| PUT    | `/api/plane/{id}`       | Actualizar avión                     
+| DELETE | `/api/plane/{id}`       | Eliminar avión                       
+
+
+## 👥 Roles y Permisos
+
+### 👤 Usuario Regular
+- Ver vuelos disponibles
+- Reservar vuelos
+- Ver sus reservas
+
+### 👨‍💼 Administrador
+- Gestionar vuelos (eliminar)
+
+  ## Licencia
+
+Este proyecto está bajo la **MIT License**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🤝 Contribución
+Las contribuciones son bienvenidas. Por favor:
+- Abre un issue para reportar problemas o sugerencias
+- Envía un pull request para contribuir con mejoras
+
+## ✉️ Contacto
+**Jonathan Torreblanca**  
+📧 Email: [Jonathan19.jtv@gmail.com](mailto:Jonathan19.jtv@gmail.com)
+
+<a href="https://www.linkedin.com/in/jonathantorreblanca" target="_blank">
+  <img src="https://img.shields.io/badge/linkedin-1de9b6?style=for-the-badge&logo=linkedin&logoColor=blue" alt="Linkedin Badge">
+</a>
+
+## ⚠️ Notas de Atención
+
+Nota:
+Las vistas actuales son prototipos y podrían cambiar en futuras actualizaciones.
+
+Nota:
+Este proyecto está en constante actualización. Conforme se implementen mejoras, se reflejarán en este documento.
