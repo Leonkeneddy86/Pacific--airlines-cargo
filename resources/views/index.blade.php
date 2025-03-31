@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,9 +7,6 @@
     <div class="text-center">
       <h1 class="text-white text-4xl font-bold">Bienvenido a Pacific Airline Cargo</h1>
       <p class="text-blue-200 text-xl mt-4">Tu experiencia de vuelo, nuestra prioridad</p>
-      <a href="./flightsCreate" class="mt-8 inline-block bg-white text-blue-900 font-semibold py-2 px-6 rounded-full hover:bg-blue-100">
-        Reserva Ahora
-      </a>
       <a href="./flights" class="mt-8 inline-block bg-white text-blue-900 font-semibold py-2 px-6 rounded-full hover:bg-blue-100">
         Ver Vuelos
       </a>
