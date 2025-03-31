@@ -22,10 +22,4 @@ class FlightController extends Controller
         return view('flightsShow', compact('flight'));
     }
 
-    public function create()
-    {
-        // Aquí podrías cargar la vista correspondiente, por ejemplo:
-        return view('flightsCreate'); // Asegúrate de tener la vista en resources/views/flights/create.blade.php
-    }
-
 }
