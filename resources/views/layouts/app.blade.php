@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', "Pacific Airlines Cargo")</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -77,6 +77,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <x-footer />
+
+        
     </div>
 </body>
 </html>
